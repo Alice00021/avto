@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.requests.AuthRequest;
+import com.example.demo.controller.dto.requests.AuthRequest;
 import com.example.demo.entity.*;
 import com.example.demo.security.JwtUtil;
 import org.springframework.web.bind.annotation.*;

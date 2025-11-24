@@ -1,4 +1,4 @@
-package com.example.demo.requests;
+package com.example.demo.controller.dto.requests;
 
 public class AuthRequest {
     private String username;
