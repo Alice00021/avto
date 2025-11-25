@@ -1,0 +1,61 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users-table
+      author: postgres
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: SERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: created_at
+                  type: TIMESTAMPTZ
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+              - column:
+                  name: updated_at
+                  type: TIMESTAMPTZ
+                  defaultValueComputed: CURRENT_TIMESTAMP
+
+              - column:
+                  name: deleted_at
+                  type: TIMESTAMPTZ
+                  constraints:
+                    nullable: true
+
+              - column:
+                  name: name
+                  type: VARCHAR(100)
+
+              - column:
+                  name: surname
+                  type: VARCHAR(100)
+
+              - column:
+                  name: patronymic
+                  type: VARCHAR(100)
+
+              - column:
+                  name: email
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+                    unique: true
+
+              - column:
+                  name: password
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: role
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
